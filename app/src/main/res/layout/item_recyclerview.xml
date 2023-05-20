@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_dark_background"
+    tools:context=".ListActivity">
+
+
+    <TextView
+        android:id="@+id/movieTitle"
+        style="@style/titleString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/titleMargin"
+        android:maxWidth="280dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/movieRelease"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/moviePoster"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/movieRelease"
+        style="@style/infoString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle"
+        tools:text="Date_Release" />
+
+
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/movieAverageVotes"
+        style="@style/infoString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        app:layout_constraintEnd_toStartOf="@id/moviePopularity"
+        app:layout_constraintTop_toBottomOf="@id/movieRelease"
+        app:layout_constraintStart_toStartOf="@id/movieRelease"
+        tools:text="Vote_Average" />
+
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/movieAverageVotes"
+
+        app:layout_constraintTop_toTopOf="@id/movieAverageVotes"
+        app:srcCompat="@android:drawable/star_big_on"
+
+        />
+
+    <TextView
+        android:id="@+id/popularityLabel"
+        style="@style/infoString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/popMargin"
+        android:text="Pop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movieRelease"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle"
+        />
+    <TextView
+        android:id="@+id/moviePopularity"
+        style="@style/infoString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/popMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movieRelease"
+        app:layout_constraintTop_toBottomOf="@id/popularityLabel"
+        tools:text="PopNumber"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

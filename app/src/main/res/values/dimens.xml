@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleTextSize">20sp</dimen>
+    <dimen name="infoTextSize">15sp</dimen>
+    <dimen name="titleMargin">10dp</dimen>
+    <dimen name="popMargin">40dp</dimen>
+    <dimen name="errorFragmentTextSize">30dp</dimen>
+    <dimen name="errorFragmentImage">150dp</dimen>
+    <dimen name="maxWidthText">250dp</dimen>
+</resources>
