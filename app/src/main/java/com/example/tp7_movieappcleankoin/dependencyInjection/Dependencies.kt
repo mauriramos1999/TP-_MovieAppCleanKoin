@@ -1,16 +1,16 @@
-package com.example.tp7_movieappcleankoin.dependencies
+package com.example.tp7_movieappcleankoin.dependencyInjection
 
 import androidx.room.Room
 import com.example.tp7_movieappcleankoin.MyApp
-import com.example.tp7_movieappcleankoin.database.MovieDatabase
-import com.example.tp7_movieappcleankoin.database.MovieDatabaseImpl
-import com.example.tp7_movieappcleankoin.database.MovieRoomDatabase
-import com.example.tp7_movieappcleankoin.mvvm.contract.MainContract
-import com.example.tp7_movieappcleankoin.mvvm.model.MainModel
-import com.example.tp7_movieappcleankoin.mvvm.viewModel.MainViewModel
-import com.example.tp7_movieappcleankoin.service.MovieClient
-import com.example.tp7_movieappcleankoin.service.MovieClientPopular
-import com.example.tp7_movieappcleankoin.service.MovieService
+import com.example.tp7_movieappcleankoin.data.MoviesRepositoryImpl
+import com.example.tp7_movieappcleankoin.data.database.MovieDatabase
+import com.example.tp7_movieappcleankoin.data.database.MovieDatabaseImpl
+import com.example.tp7_movieappcleankoin.data.database.MovieRoomDatabase
+import com.example.tp7_movieappcleankoin.domain.repository.MoviesRepository
+import com.example.tp7_movieappcleankoin.domain.useCases.GetMoviesUseCase
+import com.example.tp7_movieappcleankoin.presentation.viewModel.MainViewModel
+import com.example.tp7_movieappcleankoin.data.service.MovieClient
+import com.example.tp7_movieappcleankoin.data.service.MovieClientPopular
 import okhttp3.OkHttpClient
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -55,7 +55,6 @@ val retrofitModule = module {
     single { provideHttpClient() }
     single { provideRetrofit(get()) }
     single<MovieClient> { provideService(get(), MovieClientPopular::class.java) }
-    single { MovieService(get()) }
 }
 
 val dataBaseModule = module {
@@ -74,9 +73,14 @@ val dataBaseModule = module {
     single<MovieDatabase> { getMovieDatabaseImp(get()) }
 }
 
-val modelModule = module {
-    single<MainContract.Model> { MainModel(get(), get()) }
+val repositoryModule = module {
+    single<MoviesRepository> { MoviesRepositoryImpl(get(), get()) }
 }
+
+val useCaseModule = module {
+    single { GetMoviesUseCase(get()) }
+}
+
 val viewModelModule = module {
     viewModel { MainViewModel(get()) }
 }

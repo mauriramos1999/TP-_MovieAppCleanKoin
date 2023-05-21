@@ -1,9 +1,9 @@
-package com.example.tp7_movieappcleankoin.database
+package com.example.tp7_movieappcleankoin.data.database
 
-import com.example.tp7_movieappcleankoin.database.dao.MovieDAO
-import com.example.tp7_movieappcleankoin.database.mapper.mapToDataBaseMovie
-import com.example.tp7_movieappcleankoin.database.mapper.mapToLocalMovie
-import com.example.tp7_movieappcleankoin.service.model.Movie
+import com.example.tp7_movieappcleankoin.data.database.dao.MovieDAO
+import com.example.tp7_movieappcleankoin.data.database.mapper.mapToDataBaseMovie
+import com.example.tp7_movieappcleankoin.data.database.mapper.mapToLocalMovie
+import com.example.tp7_movieappcleankoin.data.service.model.Movie
 
 interface MovieDatabase {
     suspend fun insertMovies(movies: List<Movie>)

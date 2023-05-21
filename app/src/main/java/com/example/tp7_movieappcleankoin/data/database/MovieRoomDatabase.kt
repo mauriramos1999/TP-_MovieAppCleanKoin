@@ -1,9 +1,9 @@
-package com.example.tp7_movieappcleankoin.database
+package com.example.tp7_movieappcleankoin.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.tp7_movieappcleankoin.database.dao.MovieDAO
-import com.example.tp7_movieappcleankoin.database.entity.MovieEntity
+import com.example.tp7_movieappcleankoin.data.database.dao.MovieDAO
+import com.example.tp7_movieappcleankoin.data.database.entity.MovieEntity
 
 
 @Database(entities = [

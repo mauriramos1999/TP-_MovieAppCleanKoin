@@ -2,10 +2,7 @@ package com.example.tp7_movieappcleankoin
 
 import android.app.Application
 import android.content.Context
-import com.example.tp7_movieappcleankoin.dependencies.dataBaseModule
-import com.example.tp7_movieappcleankoin.dependencies.modelModule
-import com.example.tp7_movieappcleankoin.dependencies.retrofitModule
-import com.example.tp7_movieappcleankoin.dependencies.viewModelModule
+import com.example.tp7_movieappcleankoin.dependencyInjection.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -28,7 +25,7 @@ class MyApp : Application() {
 
         startKoin {
             androidContext(this@MyApp)
-            modules(listOf(retrofitModule,dataBaseModule,modelModule,viewModelModule))
+            modules(listOf(retrofitModule,dataBaseModule,useCaseModule, repositoryModule,viewModelModule))
         }
     }
 

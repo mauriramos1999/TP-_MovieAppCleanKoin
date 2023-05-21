@@ -1,7 +1,7 @@
-package com.example.tp7_movieappcleankoin.database.mapper
+package com.example.tp7_movieappcleankoin.data.database.mapper
 
-import com.example.tp7_movieappcleankoin.database.entity.MovieEntity
-import com.example.tp7_movieappcleankoin.service.model.Movie
+import com.example.tp7_movieappcleankoin.data.database.entity.MovieEntity
+import com.example.tp7_movieappcleankoin.data.service.model.Movie
 
 fun Movie.mapToDataBaseMovie(): MovieEntity =
     MovieEntity(

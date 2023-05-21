@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin
+package com.example.tp7_movieappcleankoin.presentation.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +9,7 @@ import com.example.tp7_movieappcleankoin.databinding.ActivityListBinding
 import com.example.tp7_movieappcleankoin.databinding.EmptyStateBinding
 import com.example.tp7_movieappcleankoin.dialogFragment.FragmentError
 import com.example.tp7_movieappcleankoin.emptyData.EmptyDataObserver
-import com.example.tp7_movieappcleankoin.mvvm.viewModel.MainViewModel
+import com.example.tp7_movieappcleankoin.presentation.viewModel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListActivity : AppCompatActivity() {
@@ -24,7 +24,7 @@ class ListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.backButton.setOnClickListener{
-            val intent = Intent(this,FirstActivity::class.java)
+            val intent = Intent(this, FirstActivity::class.java)
             startActivity(intent)
         }
 

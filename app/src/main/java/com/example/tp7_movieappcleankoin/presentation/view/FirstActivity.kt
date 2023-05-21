@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin
+package com.example.tp7_movieappcleankoin.presentation.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

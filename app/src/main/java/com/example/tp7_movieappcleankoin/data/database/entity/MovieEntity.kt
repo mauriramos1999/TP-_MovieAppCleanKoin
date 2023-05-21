@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin.database.entity
+package com.example.tp7_movieappcleankoin.data.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

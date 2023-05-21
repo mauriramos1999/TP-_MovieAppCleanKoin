@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin.service.model
+package com.example.tp7_movieappcleankoin.data.service.model
 
 import com.google.gson.annotations.SerializedName
 
