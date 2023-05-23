@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin.adapter
+package com.example.tp7_movieappcleankoin.presentation.recyclerView.adapter
 
 import android.view.LayoutInflater
 import android.view.View

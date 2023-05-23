@@ -7,4 +7,8 @@
     <dimen name="errorFragmentTextSize">30dp</dimen>
     <dimen name="errorFragmentImage">150dp</dimen>
     <dimen name="maxWidthText">250dp</dimen>
+    <dimen name="maxWidthTitleText">280dp</dimen>
+    <dimen name="posterSize">100dp</dimen>
+    <dimen name="posterMargin">4dp</dimen>
+    <dimen name="averageVotesPaddingTop">5dp</dimen>
 </resources>

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/titleMargin"
-        android:maxWidth="280dp"
+        android:maxWidth="@dimen/maxWidthTitleText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/movieRelease"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,9 +34,9 @@
 
     <ImageView
         android:id="@+id/moviePoster"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="@dimen/posterSize"
+        android:layout_height="@dimen/posterSize"
+        android:layout_marginTop="@dimen/posterMargin"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
         style="@style/infoString"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
+        android:paddingTop="@dimen/averageVotesPaddingTop"
         app:layout_constraintEnd_toStartOf="@id/moviePopularity"
         app:layout_constraintTop_toBottomOf="@id/movieRelease"
         app:layout_constraintStart_toStartOf="@id/movieRelease"
@@ -59,7 +59,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/movieAverageVotes"
-
         app:layout_constraintTop_toTopOf="@id/movieAverageVotes"
         app:srcCompat="@android:drawable/star_big_on"
 
@@ -76,6 +75,7 @@
         app:layout_constraintStart_toEndOf="@id/movieRelease"
         app:layout_constraintTop_toBottomOf="@id/movieTitle"
         />
+
     <TextView
         android:id="@+id/moviePopularity"
         style="@style/infoString"

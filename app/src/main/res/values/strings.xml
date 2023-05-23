@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">TP7_MovieApp</string>
     <string name="app_description">An application that shows you the most popular movies of the week.</string>
+    <string name="backButtonText">BACK</string>
     <string name="empyState">No data found</string>
+    <string name="errorFragment">No Internet Connection</string>
 </resources>

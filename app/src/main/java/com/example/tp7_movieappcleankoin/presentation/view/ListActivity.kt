@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tp7_movieappcleankoin.adapter.MoviesAdapter
+import com.example.tp7_movieappcleankoin.presentation.recyclerView.adapter.MoviesAdapter
 import com.example.tp7_movieappcleankoin.databinding.ActivityListBinding
 import com.example.tp7_movieappcleankoin.databinding.EmptyStateBinding
 import com.example.tp7_movieappcleankoin.dialogFragment.FragmentError
