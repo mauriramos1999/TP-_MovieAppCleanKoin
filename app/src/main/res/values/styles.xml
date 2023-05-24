@@ -5,6 +5,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="butttonFirstActivity">
+        <item name="android:backgroundTint">@color/black</item>
+    </style>
+
     <style name="titleString">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/titleTextSize</item>

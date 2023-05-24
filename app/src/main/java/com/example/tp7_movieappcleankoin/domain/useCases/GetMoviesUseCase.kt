@@ -2,7 +2,7 @@ package com.example.tp7_movieappcleankoin.domain.useCases
 
 import com.example.tp7_movieappcleankoin.domain.repository.MoviesRepository
 import com.example.tp7_movieappcleankoin.data.service.model.Movie
-import com.example.tp7_movieappcleankoin.util.CoroutineResult
+import com.example.tp7_movieappcleankoin.domain.util.CoroutineResult
 
 class GetMoviesUseCase(private val moviesRepository: MoviesRepository) {
 

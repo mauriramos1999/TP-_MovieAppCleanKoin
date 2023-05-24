@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin.util
+package com.example.tp7_movieappcleankoin.domain.util
 
 sealed class CoroutineResult<out T : Any> {
     class Success<out T : Any>(val data: T) : CoroutineResult<T>()

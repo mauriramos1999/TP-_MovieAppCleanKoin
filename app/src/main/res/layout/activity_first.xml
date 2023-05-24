@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/mainActivityText"
-        android:text="TP6_MovieApp"
+        android:text="@string/app_name"
         android:textSize="@dimen/titleTextSize"
         android:maxWidth="@dimen/maxWidthText"
         app:layout_constraintBottom_toTopOf="@id/buttonMain"
@@ -35,9 +35,10 @@
 
     <Button
         android:id="@+id/buttonMain"
+        style="@style/butttonFirstActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Press me"
+        android:text="@string/firstButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,4 +1,4 @@
-package com.example.tp7_movieappcleankoin.dependencyInjection
+package com.example.tp7_movieappcleankoin.di
 
 import androidx.room.Room
 import com.example.tp7_movieappcleankoin.MyApp
@@ -8,8 +8,7 @@ import com.example.tp7_movieappcleankoin.data.database.MovieDatabaseImpl
 import com.example.tp7_movieappcleankoin.data.database.MovieRoomDatabase
 import com.example.tp7_movieappcleankoin.domain.repository.MoviesRepository
 import com.example.tp7_movieappcleankoin.domain.useCases.GetMoviesUseCase
-import com.example.tp7_movieappcleankoin.presentation.viewModel.MainViewModel
-import com.example.tp7_movieappcleankoin.data.service.MovieClient
+import com.example.tp7_movieappcleankoin.presentation.viewModel.ListViewModel
 import com.example.tp7_movieappcleankoin.data.service.MovieClientPopular
 import okhttp3.OkHttpClient
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -54,8 +53,9 @@ val retrofitModule = module {
 
     single { provideHttpClient() }
     single { provideRetrofit(get()) }
-    single<MovieClient> { provideService(get(), MovieClientPopular::class.java) }
+    single { provideService(get(), MovieClientPopular::class.java) }
 }
+
 
 val dataBaseModule = module {
 
@@ -82,5 +82,5 @@ val useCaseModule = module {
 }
 
 val viewModelModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { ListViewModel(get()) }
 }

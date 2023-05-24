@@ -9,14 +9,15 @@ import com.example.tp7_movieappcleankoin.databinding.ActivityListBinding
 import com.example.tp7_movieappcleankoin.databinding.EmptyStateBinding
 import com.example.tp7_movieappcleankoin.dialogFragment.FragmentError
 import com.example.tp7_movieappcleankoin.emptyData.EmptyDataObserver
-import com.example.tp7_movieappcleankoin.presentation.viewModel.MainViewModel
+import com.example.tp7_movieappcleankoin.presentation.viewModel.ListViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListBinding
-    //private lateinit var viewModel: MainContract.ViewModel
-    val viewModel: MainViewModel by viewModel()
+
+    val viewModel: ListViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -27,45 +28,23 @@ class ListActivity : AppCompatActivity() {
             val intent = Intent(this, FirstActivity::class.java)
             startActivity(intent)
         }
-
-        /*val dataBase: MovieRoomDatabase by lazy {
-            Room.databaseBuilder(this, MovieRoomDatabase::class.java, "movie-DataBase")
-                .build()
-        }*/
-
-        //val movieClient: MovieClient by inject()
-        //val movieService: MovieService by inject()
-        //val movieDatabase: MovieDatabase by inject()
-        //val mainModel: MainContract.Model by inject()
-
-
-        /*viewModel = ViewModelProvider(this,
-            ViewModelFactory(
-                arrayOf(
-                    //MainModel(movieService, movieDatabase)
-                    mainModel
-        )
-        )).
-        get(MainViewModel::class.java)*/
-
-
         viewModel.getValue().observe(this){updateUI(it)}
 
     }
 
-    private fun updateUI(x: MainViewModel.MainData){
+    private fun updateUI(x: ListViewModel.MainData){
         //binding.textview.text = x.movies.toString()
         when(x.mainStatus){
-            MainViewModel.MainStatus.SHOW_INFO ->{
+            ListViewModel.MainStatus.SHOW_INFO ->{
                 binding.recyclerView.layoutManager = LinearLayoutManager(this)
                 val moviesAdapter = MoviesAdapter(x.movies)
                 binding.recyclerView.adapter = moviesAdapter
 
-                val hola = EmptyStateBinding.inflate(layoutInflater)
-                val emptyDataObserver = EmptyDataObserver(binding.recyclerView, hola.root)
+                val emptyStateBinding = EmptyStateBinding.inflate(layoutInflater)
+                val emptyDataObserver = EmptyDataObserver(binding.recyclerView, emptyStateBinding.root)
                 moviesAdapter.registerAdapterDataObserver(emptyDataObserver)
             }
-            MainViewModel.MainStatus.SHOW_DIALOG ->{
+            ListViewModel.MainStatus.SHOW_DIALOG ->{
                 val fragmentError = FragmentError.newInstance()
                 fragmentError.show(supportFragmentManager, "error")
             }

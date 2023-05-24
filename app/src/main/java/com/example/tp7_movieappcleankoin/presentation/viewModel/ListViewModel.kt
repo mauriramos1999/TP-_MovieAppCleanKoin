@@ -7,12 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.tp7_movieappcleankoin.domain.useCases.GetMoviesUseCase
 import com.example.tp7_movieappcleankoin.presentation.contract.MainContract
 import com.example.tp7_movieappcleankoin.data.service.model.Movie
-import com.example.tp7_movieappcleankoin.util.CoroutineResult
+import com.example.tp7_movieappcleankoin.domain.util.CoroutineResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel(private val getMoviesUseCase: GetMoviesUseCase) :
+class ListViewModel(private val getMoviesUseCase: GetMoviesUseCase) :
     ViewModel(), MainContract.ViewModel {
 
     private val mutableLiveData: MutableLiveData<MainData> = MutableLiveData()

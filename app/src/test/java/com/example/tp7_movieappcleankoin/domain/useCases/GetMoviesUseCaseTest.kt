@@ -3,8 +3,7 @@ package com.example.tp7_movieappcleankoin.domain.useCases
 import com.example.tp7_movieappcleankoin.data.service.model.Movie
 import com.example.tp7_movieappcleankoin.domain.repository.MoviesRepository
 import com.example.tp7_movieappcleankoin.presentation.viewModel.CoroutinesTestRule
-import com.example.tp7_movieappcleankoin.presentation.viewModel.MainViewModel
-import com.example.tp7_movieappcleankoin.util.CoroutineResult
+import com.example.tp7_movieappcleankoin.domain.util.CoroutineResult
 import io.mockk.mockkClass
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert
